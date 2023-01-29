@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Application to place order with multiple items having different tax values and discounts if clubbed with another item.
 
-Things you may want to cover:
+* Ruby version - 2.7.4
 
-* Ruby version
+* Rails version - 7.0.4.1
 
-* System dependencies
+* Database creation - rake db:create
 
-* Configuration
+Postman Collection for apis
 
-* Database creation
+- https://documenter.getpostman.com/view/606862/2s935hQSjM
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Screenshots for web app
+- https://easyupload.io/m/w65x5l
