@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+	<% @cart_items.each_with_index do |cart_item, index| %>  	
+	    <tr>
+	      <th scope="row"><%= index + 1 %></th>
+	      <td><%= cart_item.item.name %></td>
+	      <td><%= cart_item.quantity %></td>
+	    </tr>
+	<% end %>
+  </tbody>
+</table>
+<% if @cart_items.present? %>
+	<%= button_to "Place order", orders_path%>
+<% else %>
+	No Items in Cart
+<% end %>

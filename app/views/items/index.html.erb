@@ -1,0 +1,26 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Category</th>
+      <th scope="col">Tax</th>
+      <th scope="col">Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+	<% @items.each_with_index do |item, index| %> 
+	    <tr>
+	      <th scope="row"><%= index + 1 %></th>
+	      <td><%= item.name %></td>
+	      <td><%= item.available_quantity %></td>
+	      <td><%= item.price %></td>
+	      <td><%= item.category_name %></td>
+	      <td><%= item.tax_value.to_i %></td>
+	      <td><%= link_to "Item Detail", item_path(item)%></td>
+	    </tr>
+	<% end %>
+  </tbody>
+</table>

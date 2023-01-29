@@ -1,0 +1,27 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Category</th>
+      <th scope="col">Tax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= @item.name %></td>
+      <td><%= @item.available_quantity %></td>
+      <td><%= @item.price %></td>
+      <td><%= @item.category&.name %></td>
+      <td><%= @item.tax&.value.to_i %></td>
+    </tr>
+  </tbody>
+</table>
+<%= form_for @item, url: create_or_update_path, method: :post do |f| %>
+  Quantity: <%= text_field_tag "quantity" %><br />
+  <%= hidden_field_tag "item_id", @item.id %>
+  <%= f.submit "Add to Cart" %>
+<% end %>

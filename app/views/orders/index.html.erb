@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Email</th>
+      <th scope="col">Total</th>
+      <th scope="col">Items</th>
+      <th scope="col">Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+	<% @orders.each_with_index do |order, index| %>  	
+	    <tr>
+	      <th scope="row"><%= index + 1 %></th>
+	      <td><%= order.user.email %></td>
+	      <td><%= order.order_total %></td>
+	      <td><%= order.items.pluck('name')%></td>
+	      <td><%= link_to "Order Detail", order_path(order)%></td>
+	    </tr>
+	<% end %>
+  </tbody>
+</table>
